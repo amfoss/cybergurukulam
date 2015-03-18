@@ -51,22 +51,22 @@
 					<section class="feature left">
 						<a href="#" class="image icon fa-signal"><img src="images/pic01.jpg" alt="" /></a>
 						<div class="content">
-							<h3>The First Thing</h3>
-							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
+							<h3>Learn</h3>
+							<p>Learn from experts, and understand the true potential in you</p>
 						</div>
 					</section>
 					<section class="feature right">
 						<a href="#" class="image icon fa-code"><img src="images/pic02.jpg" alt="" /></a>
 						<div class="content">
-							<h3>The Second Thing</h3>
-							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
+							<h3>Hack</h3>
+							<p>Hack anything under the sun</p>
 						</div>
 					</section>
 					<section class="feature left">
 						<a href="#" class="image icon fa-mobile"><img src="images/pic03.jpg" alt="" /></a>
 						<div class="content">
-							<h3>The Third Thing</h3>
-							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
+							<h3>Share</h3>
+							<p>Share your skills, earn the grace</p>
 						</div>
 					</section>
 				</div>
@@ -77,7 +77,7 @@
 						<header id="register">
 							<h3>REGISTER NOW FOR CYBERGURUKULAM</h3>
 						</header>
-						<form method="post" action="register.php">
+						<form method="post" action="php/register.php">
 							<div class="row">
 								<div class="6u 12u(mobilep)">
 									<label for="name">Name</label>
@@ -85,8 +85,16 @@
 								</div>
 								<div class="6u 12u(mobilep)">
 									<label for="email">Email</label>
-									<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
+									<input class="text" type="email" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
 								</div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="password">Password</label>
+                                    <input class="text" type="password" name="password1" id="password1" value="" />
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="password">Password Again</label>
+                                    <input class="text" type="password" name="password2" id="password2" value="" />
+                                </div>
                                 <div class="6u 12u(mobilep)">
                                     <label for="phone">Date of birth</label>
                                     <input class="text" type="date"  name="dob" id="dob" value="" placeholder="12/05/1994" />
@@ -97,7 +105,7 @@
                                 </div>
                                 <div class="6u 12u(mobilep)">
                                     <label for="school">School Name</label>
-                                    <input class="text" type="text" name="email" id="email" value="" placeholder="Amrita Vidyalayam, Calicut" />
+                                    <input class="text" type="text" name="school" id="school" value="" placeholder="Amrita Vidyalayam, Calicut" />
                                 </div>
                                 <div class="6u 12u(mobilep)">
                                     <label for="city">City</label>
@@ -112,18 +120,18 @@
                                     <textarea class="text" type="text" name="paddress" id="paddress" value="" placeholder="My postal address"  size="150"></textarea>
                                 </div>
                                 <div class="6u 12u(mobilep)">
-                                    <label for="address">Current standard</label>
-                                    <label class="choice" > <input id="element_14_1" name="standard"  type="radio" value="1" /> 8th </label>
-                                    <label class="choice" for="element_14_2">  <input name="standard" type="radio" value="1" /> 9th</label>
-                                    <label class="choice" for="element_14_3"> <input name="standard" type="radio" value="1" /> 10th</label>
-                                    <label class="choice" for="element_14_4"><input  name="standard" type="radio" value="1" /> 11th</label>
+                                    <label>Current standard</label>
+                                    <label><input name="standard" type="radio" value="8" checked="checked"/> 8th </label>
+                                    <label><input name="standard" type="radio" value="9" /> 9th</label>
+                                    <label><input name="standard" type="radio" value="10" /> 10th</label>
+                                    <label><input name="standard" type="radio" value="11" /> 11th</label>
                                 </div>
                                 <div class="6u 12u(mobilep)">
                                 <ul>
                                     <label for="marks">Previous year academic performance</label>
-                                    <li><label class="description"> Computer Science: </label><input id="element_101" name="computerscience" class="element text medium" type="number"  value=""/></li>
-                                    <li><label class="description"> Physics: </label><input id="element_102" name="physics" class="element text medium" type="number" value=""/></li>
-                                    <li><label class="description"> Maths:</label> <input id="element_103" name="maths" class="element text medium" type="number: value=""/></li>
+                                    <li><label> Computer Science: </label><input id="cs" name="computerscience"  type="number"  value=""/></li>
+                                    <li><label> Physics: </label><input id="phy" name="physics" type="number" value=""/></li>
+                                    <li><label> Maths:</label> <input id="maths" name="math"  type="number" value=""/></li>
                                 </ul>
                                 </div>
 
@@ -181,7 +189,7 @@
 						<div class="row">
 							<div class="12u">
 								<ul class="actions">
-									<li> <input type="submit" value="Send Message" /></li>
+									<li> <a href="mailto:bithin2007@gmail.com" ><input type="submit" value="Send Message" /></a></li>
 								</ul>
 							</div>
 						</div>
