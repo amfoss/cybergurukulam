@@ -1,0 +1,153 @@
+@import 'vars';
+@import 'mixins';
+
+/*
+	Directive by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Basic */
+
+	h2 {
+		font-size: 1em;
+	}
+
+	h3 {
+		font-size: 1em;
+	}
+	
+/* Section/Article */
+
+	header {
+		p {
+			font-size: 0.8em;
+		}
+
+		&.major {
+			margin-bottom: 2em;
+			
+			br {
+				display: none;
+			}
+			
+			p {
+				font-size: 0.8em;
+			}
+		}
+	}
+	
+	footer {
+		&.major {
+			margin-top: 2em;
+
+			br {
+				display: none;
+			}
+		}
+	}
+
+/* List */
+
+	ul {
+		&.actions {
+			li {
+				padding: 0 0 0 15px;
+			}
+			
+			&.vertical {
+				li {
+					padding: 15px 0 0 0;
+				}
+			}
+		}
+	}
+		
+/* Box */
+
+	.box {
+		padding: 2em;
+		margin-bottom: 2em;
+	}
+
+/* Feature */
+
+	.feature {
+		background: $color-bg;
+		display: block;
+		height: auto;
+		margin-bottom: 2em;
+			
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		&:before,
+		&:after {
+			display: none;
+		}
+		
+		.image {
+			float: none;
+			height: 15em;
+			width: 100%;
+		}
+		
+		.content {
+			border: solid 1px $color-border;
+			padding: 2em !important;
+			text-align: center;
+			width: 100%;
+		}
+	}
+
+/* Header */
+
+	#header {
+		background-image:			url('images/top-1280.svg'),			url('images/overlay.png'),		url('../images/header.jpg');
+		background-size:			1280px 184px,						auto,							cover;
+		padding: 3em 0 7em 0;
+
+		&:before {
+			height: calc(100% - 20px);
+		}
+
+		&:after {
+			height: 20px;
+		}
+
+		.logo {
+			font-size: 1.5em;
+		}
+
+		h1 {
+			font-size: 1.25em;
+		}
+		
+		p {
+			font-size: 1em;
+		}
+	}
+
+/* Footer */
+
+	#footer {
+		background-image:			url('images/bottom-1280.svg');
+		background-size:			1280px 184px;
+		margin-top: -75px;
+		padding: calc(184px + 2em) 0 2em 0;
+
+		&:before {
+			height: calc(184px + 2em);
+		}
+
+		form {
+			padding-bottom: 0;
+		}		
+	}
+	
+/* Main */
+
+	#main {
+		padding: 2em 0 2em 0;
+	}
