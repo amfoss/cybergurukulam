@@ -8,7 +8,7 @@
 
 $host = "localhost";
 $user = "root";
-$pass = "<pass>";
+$pass = "<password>";
 $database = "cybergurukulam";
 
 $sqlRegistrationTable = <<<EOSQL
@@ -56,25 +56,25 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		die( "incomplete POST received ");
 	}
 
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$password1 = $_POST['password1'];
-	$password2 = $_POST['password2'];
+	$name = mysql_real_escape_string( $_POST['name']);
+	$email = mysql_real_escape_string( $_POST['email']);
+	$password1 = mysql_real_escape_string( $_POST['password1'] );
+	$password2 = mysql_real_escape_string( $_POST['password2'] );
 	if ( $password1 != $password2 ) {
 		die( "Password mismatch" );
 	}
-	$dob = $_POST['dob'];
-	$school = $_POST['school'];
-	$city = $_POST['city'];
-	$address= $_POST['address'];
-	$paddress = $_POST['paddress'];
-	$standard = $_POST['standard'];
-	$cse= $_POST['computerscience'];
-	$phy = $_POST['physics'];
-	$math = $_POST['math'];
-	$olympiad= $_POST['olympiad'];
-	$ambition= $_POST['ambition'];
-	$interest= $_POST['interest'];
+	$dob = mysql_real_escape_string( $_POST['dob'] );
+	$school = mysql_real_escape_string( $_POST['school'] );
+	$city = mysql_real_escape_string( $_POST['city'] );
+	$address= mysql_real_escape_string( $_POST['address'] );
+	$paddress = mysql_real_escape_string( $_POST['paddress'] );
+	$standard = mysql_real_escape_string( $_POST['standard'] );
+	$cse= mysql_real_escape_string( $_POST['computerscience'] );
+	$phy = mysql_real_escape_string( $_POST['physics'] );
+	$math = mysql_real_escape_string( $_POST['math'] );
+	$olympiad= mysql_real_escape_string( $_POST['olympiad'] );
+	$ambition= mysql_real_escape_string( $_POST['ambition'] );
+	$interest= mysql_real_escape_string( $_POST['interest'] );
 
 	$insertStatemenet = "
 	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_password`, `reg_email`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
