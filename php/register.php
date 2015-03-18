@@ -8,7 +8,7 @@
 
 $host = "localhost";
 $user = "root";
-$pass = "<password>";
+$pass = <password>;
 $database = "cybergurukulam";
 
 $sqlRegistrationTable = <<<EOSQL
