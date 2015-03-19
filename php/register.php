@@ -35,17 +35,14 @@ EOSQL;
 
 $connection = mysql_connect( $host, $user, $pass );
 if ( !$connection ) {
-	die("Database connection failed");
 	header('Location: '.'http://103.10.24.98/php/failure.html');
 } else {
 	if( !mysql_select_db( $database ) ) {
-		die( "Cannot open database");
 		header('Location: '.'http://103.10.24.98/php/failure.html');
 	}
 }
 $result = mysql_query( $sqlRegistrationTable ) or die( mysql_error() );
 if ( !$result ) {
-	die( "cannot create table" );
 	header('Location: '.'http://103.10.24.98/php/failure.html');
 }
 $invalidPOST = false;
@@ -57,7 +54,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		}
 	}
 	if ( $invalidPOST ) {
-		die( "incomplete POST received ");
 		header('Location: '.'http://103.10.24.98/php/failure.html');
 	}
 
@@ -67,7 +63,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	$password1 = mysql_real_escape_string( $_POST['password1'] );
 	$password2 = mysql_real_escape_string( $_POST['password2'] );
 	if ( $password1 != $password2 ) {
-		die( "Password mismatch" );
 		header('Location: '.'http://103.10.24.98/php/failure.html');
 	}
 	$dob = mysql_real_escape_string( $_POST['dob'] );
