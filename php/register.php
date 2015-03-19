@@ -5,12 +5,38 @@
  * Date: 18/3/15
  * Time: 6:31 PM
  */
+error_reporting(-1);
 
-$host = "localhost";
-$user = "root";
-$pass = "toor";
-$database = "cybergurukulam";
+if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+	if ( checkIfInValidPost() ) {
+		header('Location: '.'http://103.10.24.98/php/failure.html');
+		return;
+	}
+	$connection = establishConnection();
+	if( !$connection ) {
+		header('Location: '.'http://103.10.24.98/php/failure.html');
+		return;
+	}
+	createDatabaseTables();
+	if ( !(insertIntoDatabase()) ) {
+		header('Location: '.'http://103.10.24.98/php/failure.html');
+	}
+	mysql_close( $connection );
+	header('Location: '.'http://103.10.24.98/php/success.html');
 
+}
+
+function establishConnection() {
+	$host = "localhost";
+	$user = "root";
+	$pass = "toor";
+	$database = "cybergurukulam";
+	$connection = mysql_connect( $host, $user, $pass );
+	mysql_select_db( $database );
+	return $connection;
+}
+
+function createDatabaseTables() {
 $sqlRegistrationTable = <<<EOSQL
 CREATE TABLE IF NOT EXISTS registration(
 	reg_id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -32,31 +58,10 @@ CREATE TABLE IF NOT EXISTS registration(
 	reg_interest varchar( 400 ) DEFAULT NULL
 );
 EOSQL;
-
-$connection = mysql_connect( $host, $user, $pass );
-if ( !$connection ) {
-	header('Location: '.'http://103.10.24.98/php/failure.html');
-} else {
-	if( !mysql_select_db( $database ) ) {
-		header('Location: '.'http://103.10.24.98/php/failure.html');
-	}
+	mysql_query( $sqlRegistrationTable );
 }
-$result = mysql_query( $sqlRegistrationTable ) or die( mysql_error() );
-if ( !$result ) {
-	header('Location: '.'http://103.10.24.98/php/failure.html');
-}
-$invalidPOST = false;
-if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-	foreach( $_POST as $key=>$value ) {
-		if ( !isset( $value) ) {
-			$invalidPOST = true;
-			header('Location: '.'http://103.10.24.98/php/failure.html');
-		}
-	}
-	if ( $invalidPOST ) {
-		header('Location: '.'http://103.10.24.98/php/failure.html');
-	}
 
+function insertIntoDatabase() {
 	$name = mysql_real_escape_string( $_POST['name']);
 	$email = mysql_real_escape_string( $_POST['email']);
 	$phone = mysql_real_escape_string( $_POST['phone']);
@@ -84,14 +89,14 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	VALUES ( NULL,'$name','$password1','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
 	'$phy','$math','$olympiad','$ambition','$interest');";
 
-	$result = mysql_query( $insertStatemenet );
-	if ( !$result ) {
-		mysql_close( $connection );
-		header('Location: '.'http://103.10.24.98/php/failure.html');
-	} else {
-		mysql_close( $connection );
-		header('Location: '.'http://103.10.24.98/php/success.html');
+	return mysql_query( $insertStatemenet );
+}
+
+function checkIfInValidPost() {
+	foreach( $_POST as $key => $value ) {
+		if ( $value === "" ) {
+			return true;
+		}
 	}
-
-
+	return false;
 }
