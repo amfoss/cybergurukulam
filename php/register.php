@@ -36,25 +36,29 @@ EOSQL;
 $connection = mysql_connect( $host, $user, $pass );
 if ( !$connection ) {
 	die("Database connection failed");
+	header('Location: '.'http://103.10.24.98/php/failure.html');
 } else {
 	if( !mysql_select_db( $database ) ) {
 		die( "Cannot open database");
+		header('Location: '.'http://103.10.24.98/php/failure.html');
 	}
 }
 $result = mysql_query( $sqlRegistrationTable ) or die( mysql_error() );
 if ( !$result ) {
 	die( "cannot create table" );
+	header('Location: '.'http://103.10.24.98/php/failure.html');
 }
 $invalidPOST = false;
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	foreach( $_POST as $key=>$value ) {
 		if ( !isset( $value) ) {
 			$invalidPOST = true;
-
+			header('Location: '.'http://103.10.24.98/php/failure.html');
 		}
 	}
 	if ( $invalidPOST ) {
 		die( "incomplete POST received ");
+		header('Location: '.'http://103.10.24.98/php/failure.html');
 	}
 
 	$name = mysql_real_escape_string( $_POST['name']);
@@ -84,8 +88,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	VALUES ( NULL,'$name','$password1','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
 	'$phy','$math','$olympiad','$ambition','$interest');";
 
-	mysql_query( $insertStatemenet ) or die( mysql_error() );
+	$result = mysql_query( $insertStatemenet );
+	if ( !$result ) {
+		mysql_close( $connection );
+		header('Location: '.'http://103.10.24.98/php/failure.html');
+	}
 
 	mysql_close( $connection );
-	header('Location: '.'http://localhost/cyber/index.html');
+	header('Location: '.'http://103.10.24.98/php/success.html');
 }
