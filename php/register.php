@@ -8,7 +8,7 @@
 
 $host = "localhost";
 $user = "root";
-$pass = <password>;
+$pass = "toor";
 $database = "cybergurukulam";
 
 $sqlRegistrationTable = <<<EOSQL
@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS registration(
 	reg_name varchar(255) NOT NULL,
 	reg_password varchar(255) NOT NULL,
 	reg_email varchar(255) NOT NULL,
+	reg_phone varchar(255) NOT NULL,
 	reg_dob date NOT NULL,
 	reg_city varchar(255) NOT NULL,
 	reg_school varchar(255) NOT NULL,
@@ -58,6 +59,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 	$name = mysql_real_escape_string( $_POST['name']);
 	$email = mysql_real_escape_string( $_POST['email']);
+	$phone = mysql_real_escape_string( $_POST['phone']);
 	$password1 = mysql_real_escape_string( $_POST['password1'] );
 	$password2 = mysql_real_escape_string( $_POST['password2'] );
 	if ( $password1 != $password2 ) {
@@ -77,9 +79,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	$interest= mysql_real_escape_string( $_POST['interest'] );
 
 	$insertStatemenet = "
-	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_password`, `reg_email`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
+	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_password`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
 	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`)
-	VALUES ( NULL,'$name','$password1','$email','$dob','$city','$school','$address','$paddress','$standard','$cse',
+	VALUES ( NULL,'$name','$password1','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
 	'$phy','$math','$olympiad','$ambition','$interest');";
 
 	mysql_query( $insertStatemenet ) or die( mysql_error() );
