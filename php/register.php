@@ -68,6 +68,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	$password2 = mysql_real_escape_string( $_POST['password2'] );
 	if ( $password1 != $password2 ) {
 		die( "Password mismatch" );
+		header('Location: '.'http://103.10.24.98/php/failure.html');
 	}
 	$dob = mysql_real_escape_string( $_POST['dob'] );
 	$school = mysql_real_escape_string( $_POST['school'] );
@@ -92,8 +93,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	if ( !$result ) {
 		mysql_close( $connection );
 		header('Location: '.'http://103.10.24.98/php/failure.html');
+	} else {
+		mysql_close( $connection );
+		header('Location: '.'http://103.10.24.98/php/success.html');
 	}
 
-	mysql_close( $connection );
-	header('Location: '.'http://103.10.24.98/php/success.html');
+
 }
