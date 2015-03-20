@@ -29,7 +29,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 function establishConnection() {
 	$host = "localhost";
 	$user = "root";
-	$pass = "toor";
+	$pass = "yourpassword";
 	$database = "cybergurukulam";
 	$connection = mysql_connect( $host, $user, $pass );
 	mysql_select_db( $database );
@@ -41,7 +41,6 @@ $sqlRegistrationTable = <<<EOSQL
 CREATE TABLE IF NOT EXISTS registration(
 	reg_id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	reg_name varchar(255) NOT NULL,
-	reg_password varchar(255) NOT NULL,
 	reg_email varchar(255) NOT NULL,
 	reg_phone varchar(255) NOT NULL,
 	reg_dob date NOT NULL,
@@ -66,11 +65,6 @@ function insertIntoDatabase() {
 	$name = mysql_real_escape_string( $_POST['name']);
 	$email = mysql_real_escape_string( $_POST['email']);
 	$phone = mysql_real_escape_string( $_POST['phone']);
-	$password1 = mysql_real_escape_string( $_POST['password1'] );
-	$password2 = mysql_real_escape_string( $_POST['password2'] );
-	if ( $password1 != $password2 ) {
-		header('Location: '.'http://103.10.24.98/php/failure.html');
-	}
 	$dob = mysql_real_escape_string( $_POST['dob'] );
 	$school = mysql_real_escape_string( $_POST['school'] );
 	$city = mysql_real_escape_string( $_POST['city'] );
@@ -86,9 +80,9 @@ function insertIntoDatabase() {
 	$blog= mysql_real_escape_string( $_POST['blog'] );
 
 	$insertStatemenet = "
-	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_password`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
+	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
 	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `blog`)
-	VALUES ( NULL,'$name','$password1','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
+	VALUES ( NULL,'$name','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
 	'$phy','$math','$olympiad','$ambition','$interest', '$blog');";
 
 	return mysql_query( $insertStatemenet );
