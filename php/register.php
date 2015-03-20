@@ -9,20 +9,20 @@ error_reporting(-1);
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	if ( checkIfInValidPost() ) {
-		header('Location: '.'http://103.10.24.98/php/failure.html');
+		header('Location: '.'/../php/failure.html');
 		return;
 	}
 	$connection = establishConnection();
 	if( !$connection ) {
-		header('Location: '.'http://103.10.24.98/php/failure.html');
+		header('Location: '.'/../php/failure.html');
 		return;
 	}
 	createDatabaseTables();
 	if ( !(insertIntoDatabase()) ) {
-		header('Location: '.'http://103.10.24.98/php/failure.html');
+		header('Location: '.'/../php/failure.html');
 	}
 	mysql_close( $connection );
-	header('Location: '.'http://103.10.24.98/php/success.html');
+	header('Location: '.'/../php/success.html');
 
 }
 
