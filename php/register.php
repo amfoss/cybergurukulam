@@ -55,7 +55,8 @@ CREATE TABLE IF NOT EXISTS registration(
 	reg_math int ( 50 ) NOT NULL,
 	reg_olympiad varchar( 400 ) DEFAULT NULL,
 	reg_ambition varchar( 400 ) DEFAULT NULL,
-	reg_interest varchar( 400 ) DEFAULT NULL
+	reg_interest varchar( 400 ) DEFAULT NULL,
+	reg_blog varchar( 200 ) DEFAULT NULL
 );
 EOSQL;
 	mysql_query( $sqlRegistrationTable );
@@ -82,12 +83,13 @@ function insertIntoDatabase() {
 	$olympiad= mysql_real_escape_string( $_POST['olympiad'] );
 	$ambition= mysql_real_escape_string( $_POST['ambition'] );
 	$interest= mysql_real_escape_string( $_POST['interest'] );
+	$blog= mysql_real_escape_string( $_POST['blog'] );
 
 	$insertStatemenet = "
 	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_password`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
-	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`)
+	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `blog`)
 	VALUES ( NULL,'$name','$password1','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
-	'$phy','$math','$olympiad','$ambition','$interest');";
+	'$phy','$math','$olympiad','$ambition','$interest', '$blog');";
 
 	return mysql_query( $insertStatemenet );
 }
