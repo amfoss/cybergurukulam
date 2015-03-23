@@ -14,12 +14,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 	$connection = establishConnection();
 	if( !$connection ) {
-//		header('Location: '.'/../php/failure.html');
+		header('Location: '.'/../php/failure.html');
 		return;
 	}
 	createDatabaseTables();
 	if ( !(insertIntoDatabase()) ) {
-//		header('Location: '.'/../php/failure.html');
+		header('Location: '.'/../php/failure.html');
 	}
 	mysql_close( $connection );
 	header('Location: '.'/../php/success.html');
