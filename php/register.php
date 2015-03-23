@@ -14,13 +14,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 	$connection = establishConnection();
 	if( !$connection ) {
-		header('Location: '.'/../php/failure.html');
+//		header('Location: '.'/../php/failure.html');
 		return;
 	}
 	createDatabaseTables();
 	if ( !(insertIntoDatabase()) ) {
-		header('Location: '.'/../php/failure.html');
-		return;
+//		header('Location: '.'/../php/failure.html');
 	}
 	mysql_close( $connection );
 	header('Location: '.'/../php/success.html');
@@ -30,10 +29,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 function establishConnection() {
 	$host = "localhost";
 	$user = "root";
-	$pass = "yourpassword";
+	$pass = "toor";
 	$database = "cybergurukulam";
 	$connection = mysql_connect( $host, $user, $pass );
-	mysql_select_db( $database );
+	if ( !mysql_select_db( $database ) ) {
+		die( mysql_error() );
+	}
 	return $connection;
 }
 
@@ -50,19 +51,22 @@ CREATE TABLE IF NOT EXISTS registration(
 	reg_address varchar( 400 ) NOT NULL,
 	reg_paddress varchar( 400 ) NOT NULL,
 	reg_standard varchar( 50 ) NOT NULL,
-	reg_cse int varchar( 50 ) NOT NULL,
-	reg_phy int varchar( 50 ) NOT NULL,
-	reg_math int varchar( 50 ) NOT NULL,
+	reg_cse varchar( 50 ) NOT NULL,
+	reg_phy varchar( 50 ) NOT NULL,
+	reg_math varchar( 50 ) NOT NULL,
 	reg_olympiad varchar( 400 ) DEFAULT NULL,
 	reg_ambition varchar( 400 ) DEFAULT NULL,
 	reg_interest varchar( 400 ) DEFAULT NULL,
 	reg_blog varchar( 200 ) DEFAULT NULL
 );
 EOSQL;
-	mysql_query( $sqlRegistrationTable );
+	if ( !mysql_query( $sqlRegistrationTable ) ) {
+		die( mysql_error());
+	}
 }
 
 function insertIntoDatabase() {
+	print_r( $_POST );
 	$name = mysql_real_escape_string( $_POST['name']);
 	$email = mysql_real_escape_string( $_POST['email']);
 	$phone = mysql_real_escape_string( $_POST['phone']);
@@ -82,11 +86,13 @@ function insertIntoDatabase() {
 
 	$insertStatemenet = "
 	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
-	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `blog`)
+	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `reg_blog`)
 	VALUES ( NULL,'$name','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
 	'$phy','$math','$olympiad','$ambition','$interest', '$blog');";
 
-	return mysql_query( $insertStatemenet );
+	if( !mysql_query( $insertStatemenet ) ) {
+		die( mysql_error() );
+	}
 }
 
 function checkIfInValidPost() {
