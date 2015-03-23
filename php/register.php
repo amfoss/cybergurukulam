@@ -20,6 +20,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	createDatabaseTables();
 	if ( !(insertIntoDatabase()) ) {
 		header('Location: '.'/../php/failure.html');
+		return;
 	}
 	mysql_close( $connection );
 	header('Location: '.'/../php/success.html');
