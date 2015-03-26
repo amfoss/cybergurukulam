@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cybergurukulam</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+				<span class="logo icon fa-code-fork"></span>
+				<h1>Learn to hack with <br>CyberGurukulam</h1>
+				<p>An initiative by the Amrita Center for cyber security to enhance security know-how of school students</p>.
+                <br>
+                <a href="#register" class="button">Register Now</a>
+                
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<header class="major container 75%">
+					<h2>We conduct experiments that
+					<br />
+					may or may not seriously
+					<br />
+					break the universe</h2>
+					<!--
+					<p>Tellus erat mauris ipsum fermentum<br />
+					etiam vivamus nunc nibh morbi.</p>
+					-->
+				</header>
+
+				<div class="box alt container">
+					<section class="feature left">
+						<a href="#" class="image icon fa-signal"><img src="images/pic01.jpg" alt="" /></a>
+						<div class="content">
+							<h3>Learn</h3>
+							<p>Learn from experts, and understand the true potential in you</p>
+						</div>
+					</section>
+					<section class="feature right">
+						<a href="#" class="image icon fa-code"><img src="images/pic02.jpg" alt="" /></a>
+						<div class="content">
+							<h3>Hack</h3>
+							<p>Take part in the hacking contest, conducted based on the knowledge acquired.</p>
+						</div>
+					</section>
+					<section class="feature left">
+						<a href="#" class="image icon fa-mobile"><img src="images/pic03.jpg" alt="" /></a>
+						<div class="content">
+							<h3>Win</h3>
+							<p>Win Exciting prizes!</p>
+						</div>
+					</section>
+				</div>
+
+
+				<div class="box container">
+					<section>
+						<header id="register">
+							<h3>REGISTER NOW FOR CYBERGURUKULAM</h3>
+						</header>
+						<form method="post" action="php/register.php">
+							<div class="row">
+								<div class="6u 12u(mobilep)">
+									<label for="name">Name</label>
+									<input class="text" type="text" name="name" id="name" value="" placeholder="" />
+								</div>
+								<div class="6u 12u(mobilep)">
+									<label for="email">Email</label>
+									<input class="text" type="email" name="email" id="email" value="" placeholder="" />
+								</div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="password">Password</label>
+                                    <input class="text" type="password" name="password1" id="password1" value="" />
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="password">Password Again</label>
+                                    <input class="text" type="password" name="password2" id="password2" value="" />
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="phone">Date of birth</label>
+                                    <input class="text" type="date"  name="dob" id="dob" value="" placeholder="" />
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="phone">Phone Number</label>
+                                    <input class="text" type="text" name="phone" id="phone" value="" placeholder="" />
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="school">School Name</label>
+                                    <input class="text" type="text" name="school" id="school" value="" placeholder="" />
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="city">City</label>
+                                    <input class="text" type="text" name="city" id="city" value="" placeholder="" />
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="address">School Postal Address</label>
+                                    <textarea class="text" type="text" name="address" id="address" value="" placeholder=""  size="150"></textarea>
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label for="address">Home Postal Address</label>
+                                    <textarea class="text" type="text" name="paddress" id="paddress" value="" placeholder=""  size="150"></textarea>
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <label>Current standard</label>
+                                    <label><input name="standard" type="radio" value="8" checked="checked"/> 8th </label>
+                                    <label><input name="standard" type="radio" value="9" /> 9th</label>
+                                    <label><input name="standard" type="radio" value="10" /> 10th</label>
+                                    <label><input name="standard" type="radio" value="11" /> 11th</label>
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                <ul>
+                                    <label for="marks">Previous year academic performance</label>
+                                    <li><label> Computer Science: </label><input id="cs" name="computerscience"  type="number"  value=""/></li>
+                                    <li><label> Physics: </label><input id="phy" name="physics" type="number" value=""/></li>
+                                    <li><label> Maths:</label> <input id="maths" name="math"  type="number" value=""/></li>
+                                </ul>
+                                </div>
+
+                                <div class="12u">
+                                    <label for="subject">Have you taken part in Math or any science olympiad ? </label>
+                                    <textarea name="olympiad" id="message" placeholder="" rows="6"></textarea>
+                                </div>
+                                <div class="12u">
+                                    <label for="subject">What is your ambition ?</label>
+                                    <textarea name="ambition" id="message" placeholder="" rows="6"></textarea>
+                                </div>
+                                <div class="12u">
+                                    <label for="subject">Are you interested in cyber security and why ?</label>
+                                    <textarea name="interest" id="message" placeholder="" rows="6"></textarea>
+                                </div>
+                             <div class="12u">
+                                    <label for="school">Do you have a blog ? ( If yes, the address )</label>
+                                    <textarea class="text" type="text" name="blog" id="b" value="" rows="1" placeholder=""></textarea>
+                                </div>
+
+							</div>
+							<div class="row">
+								<div class="12u">
+									<ul class="actions">
+										<li><input type="submit" value="Send" /></li>
+										<li><input type="reset" value="Reset" class="alt" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>
+				</div>
+			</div>
+
+		<!-- Footer updated with e-mail ID and the send mail is now manual-->
+		<div id="footer">
+				<div class="container 75%">
+
+					<header class="major last">
+						<h2>You have some questions! email us @</h2>
+					</header>
+					<!-- 
+					<p>Please leave your message</p>
+
+					<form method="post" action="#">
+						<div class="row">
+							<div class="6u 12u(mobilep)">
+								<input type="text" name="name" placeholder="Name" />
+							</div>
+							<div class="6u 12u(mobilep)">
+								<input type="email" name="email" placeholder="Email" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<textarea name="message" placeholder="Message" rows="6"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<ul class="actions">
+									<li> <a href="mailto:bithin2007@gmail.com" ><input type="submit" value="Send Message" /></a></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+-->					<div class="row">
+							<div class="12u" >
+							  <p>
+								cybergurukulam@gmail.com
+							  </p>
+							</div>
+						</div>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Some rights reserved.</li><li>Design: <a href="http://amritafoss.in">FOSS@Amrita</a></li>
+					</ul>
+
+				</div>
+			</div>
+
+	</body>
+</html>
