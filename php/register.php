@@ -27,10 +27,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 }
 
 function establishConnection() {
-	$host = "localhost";
-	$user = "root";
-	$pass = "toor";
-	$database = "cybergurukulam";
+	include "access.php";
 	$connection = mysql_connect( $host, $user, $pass );
 	if ( !mysql_select_db( $database ) ) {
 		die( mysql_error() );
