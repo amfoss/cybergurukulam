@@ -1,0 +1,131 @@
+@import 'vars';
+@import 'mixins';
+
+/*
+	Directive by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Basic */
+
+	hr {
+		border-top: solid 1px $color-border-ie;
+	}
+	
+	blockquote {
+		border-left: solid 0.5em $color-border-ie;
+	}
+
+/* Section/Article */
+
+	header {
+		&.major {
+			border-color: $color-border-ie;
+			
+			p {
+				border-top: solid 1px $color-border-ie;
+			}
+		}
+	}
+
+	footer {
+		&.major {
+			border-color: $color-border-ie;
+		}
+	}
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	.button {
+		position: relative;
+		-ms-behavior: url('css/ie/PIE.htc');
+
+		&.alt {
+			border: solid 1px $color-border-ie;
+		}
+	}
+
+/* Form */
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		position: relative;
+		border: solid 1px $color-border-ie;
+		-ms-behavior: url('css/ie/PIE.htc');
+	}
+	
+/* Image */
+
+	.image {
+		border: 0;
+		display: inline-block;
+		position: relative;
+		
+		&:after {
+			display: none;
+		}
+	}
+
+/* Box */
+
+	.box {
+		border: solid 1px $color-border-ie;
+	}
+
+/* Header */
+
+	#header {
+		background-image: url('../../images/header.jpg') !important;
+		background-size: cover !important;
+		background-position: scroll !important;
+		-ms-behavior: url('css/ie/backgroundsize.min.htc');
+		padding: 8em 0 !important;
+		color: $color-accent2-fg-bold;
+		
+		a {
+			color: inherit;
+		}
+		
+		&:before {
+			content: '';
+			background-image: url('../images/overlay.png');
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 0;
+		}
+		
+		> * {
+			position: relative;
+			z-index: 1;
+		}
+		
+		.logo {
+			-ms-behavior: url('css/ie/PIE.htc');
+		}
+	}
+	
+/* Footer */
+
+	#footer {
+		background-image: none !important;
+		margin-top: 0 !important;
+		padding: 4em 0 !important;
+		color: $color-accent-fg-bold;
+	}
+	
+/* Main */
+
+	#main {
+		padding: 4em 0;
+	}

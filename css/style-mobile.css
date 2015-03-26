@@ -1,0 +1,139 @@
+/*
+	Directive by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Basic */
+
+	h2 {
+		font-size: 1em;
+	}
+
+	h3 {
+		font-size: 1em;
+	}
+
+/* Section/Article */
+
+	header p {
+		font-size: 0.8em;
+	}
+
+	header.major {
+		margin-bottom: 2em;
+	}
+
+		header.major br {
+			display: none;
+		}
+
+		header.major p {
+			font-size: 0.8em;
+		}
+
+	footer.major {
+		margin-top: 2em;
+	}
+
+		footer.major br {
+			display: none;
+		}
+
+/* List */
+
+	ul.actions li {
+		padding: 0 0 0 15px;
+	}
+
+	ul.actions.vertical li {
+		padding: 15px 0 0 0;
+	}
+
+/* Box */
+
+	.box {
+		padding: 2em;
+		margin-bottom: 2em;
+	}
+
+/* Feature */
+
+	.feature {
+		background: white;
+		display: block;
+		height: auto;
+		margin-bottom: 2em;
+	}
+
+		.feature:last-child {
+			margin-bottom: 0;
+		}
+
+		.feature:before, .feature:after {
+			display: none;
+		}
+
+		.feature .image {
+			float: none;
+			height: 15em;
+			width: 100%;
+		}
+
+		.feature .content {
+			border: solid 1px rgba(224, 224, 224, 0.75);
+			padding: 2em !important;
+			text-align: center;
+			width: 100%;
+		}
+
+/* Header */
+
+	#header {
+		background-image: url("images/top-1280.svg"), url("images/overlay.png"), url("../images/header.jpg");
+		background-size: 1280px 184px,						auto,							cover;
+		padding: 3em 0 7em 0;
+	}
+
+		#header:before {
+			height: calc(100% - 20px);
+		}
+
+		#header:after {
+			height: 20px;
+		}
+
+		#header .logo {
+			font-size: 1.5em;
+		}
+
+		#header h1 {
+			font-size: 1.25em;
+		}
+
+		#header p {
+			font-size: 1em;
+		}
+
+/* Footer */
+
+	#footer {
+		background-image: url("images/bottom-1280.svg");
+		background-size: 1280px 184px;
+		margin-top: -75px;
+		padding: calc(184px + 2em) 0 2em 0;
+	}
+
+		#footer:before {
+			height: calc(184px + 2em);
+		}
+
+		#footer form {
+			padding-bottom: 0;
+		}
+
+/* Main */
+
+	#main {
+		padding: 2em 0 2em 0;
+	}

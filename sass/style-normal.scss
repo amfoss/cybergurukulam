@@ -1,0 +1,103 @@
+@import 'vars';
+@import 'mixins';
+
+/*
+	Directive by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Basic */
+
+	body, input, select, textarea {
+		font-size: 13pt;
+	}
+
+	h2 {
+		font-size: 1.35em;
+	}
+
+	h3 {
+		font-size: 1.15em;
+	}
+	
+/* Section/Article */
+	
+	header {
+		&.major {
+			margin-bottom: 4em;
+			padding: 3em 0;
+
+			p {
+				font-size: 1.15em;
+			}
+		}
+	}
+	
+	footer {
+		&.major {
+			margin-top: 4em;
+			padding: 3em 0;
+		}
+	}
+
+/* Box */
+
+	.box {
+		padding: 2.5em;
+		margin-bottom: 4em;
+	}
+
+/* Feature */
+
+	.feature {
+		height: 18em;
+		
+		.content {
+			padding: 2.5em;
+		}
+	}
+
+/* Header */
+
+	#header {
+		background-attachment:		scroll,							scroll,							scroll;
+		background-image:			url('images/top-1600.svg'),		url('images/overlay.png'),		url('../images/header.jpg');
+		background-size:			1600px 230px,					auto,							cover;
+		padding: 6em 0 12em 0;
+
+		&:before {
+			height: calc(100% - 25px);
+		}
+
+		&:after {
+			height: 25px;
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+		
+		p {
+			font-size: 1.15em;
+		}
+	}
+
+/* Footer */
+
+	#footer {
+		background-image:			url('images/bottom-1600.svg');
+		background-size:			1600px 230px;
+		margin-top: -100px;
+		padding: calc(230px + 4em) 0 6em 0;
+
+		&:before {
+			height: calc(230px + 4em);
+		}
+	}
+	
+/* Main */
+
+	#main {
+		padding: 4em 0 3em 0;
+	}

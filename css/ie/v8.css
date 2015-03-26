@@ -1,0 +1,127 @@
+/*
+	Directive by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Basic */
+
+	hr {
+		border-top: solid 1px #cccccc;
+	}
+
+	blockquote {
+		border-left: solid 0.5em #cccccc;
+	}
+
+/* Section/Article */
+
+	header.major {
+		border-color: #cccccc;
+	}
+
+		header.major p {
+			border-top: solid 1px #cccccc;
+		}
+
+	footer.major {
+		border-color: #cccccc;
+	}
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	.button {
+		position: relative;
+		-ms-behavior: url("css/ie/PIE.htc");
+	}
+
+		input[type="submit"].alt,
+		input[type="reset"].alt,
+		input[type="button"].alt,
+		.button.alt {
+			border: solid 1px #cccccc;
+		}
+
+/* Form */
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		position: relative;
+		border: solid 1px #cccccc;
+		-ms-behavior: url("css/ie/PIE.htc");
+	}
+
+/* Image */
+
+	.image {
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
+
+		.image:after {
+			display: none;
+		}
+
+/* Box */
+
+	.box {
+		border: solid 1px #cccccc;
+	}
+
+/* Header */
+
+	#header {
+		background-image: url("../../images/header.jpg") !important;
+		background-size: cover !important;
+		background-position: scroll !important;
+		-ms-behavior: url("css/ie/backgroundsize.min.htc");
+		padding: 8em 0 !important;
+		color: white;
+	}
+
+		#header a {
+			color: inherit;
+		}
+
+		#header:before {
+			content: '';
+			background-image: url("../images/overlay.png");
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 0;
+		}
+
+		#header > * {
+			position: relative;
+			z-index: 1;
+		}
+
+		#header .logo {
+			-ms-behavior: url("css/ie/PIE.htc");
+		}
+
+/* Footer */
+
+	#footer {
+		background-image: none !important;
+		margin-top: 0 !important;
+		padding: 4em 0 !important;
+		color: white;
+	}
+
+/* Main */
+
+	#main {
+		padding: 4em 0;
+	}
