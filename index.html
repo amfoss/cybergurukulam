@@ -36,6 +36,7 @@
 	  ga('send', 'pageview');
 
 	</script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 	<body>
 
@@ -174,20 +175,27 @@
                                     <label for="subject">Are you interested in cyber security and why ?</label>
                                     <textarea name="interest" id="message" placeholder="" rows="6"></textarea>
                                 </div>
-                             <div class="12u">
+                                 <div class="12u">
                                     <label for="blog">Do you have a blog ? ( If yes, the address )</label>
                                     <textarea class="text" type="text" name="blog" id="blog" value="" rows="1" placeholder=""></textarea>
+                                </div>
+                                <div class="12u">
+                                    <label for="agreement">Agreement</label>
+                                    <input type="checkbox" required > I have my parents consent to attend the conference</input><br>
+                                    <input type="checkbox" required > I have liked and followed the Cyber Gurukulam <a href="https://www.facebook.com/cybergurukulam"> Facebook page </a>( We will post updates there )</input>
                                 </div>
 
 							</div>
 							<div class="row">
 								<div class="12u">
 									<ul class="actions">
+                                        <li><div class="g-recaptcha" data-sitekey="6LcfOAQTAAAAAMulh0UTBQczBLN6lLT-FtUz2_TY"></div></li><br>
 										<li><input type="submit" value="Send" /></li>
 										<li><input type="reset" value="Reset" class="alt" /></li>
 									</ul>
 								</div>
 							</div>
+
 						</form>
 					</section>
 				</div>
