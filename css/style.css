@@ -742,10 +742,10 @@
 		/*background-repeat: repeat-x,						repeat,					no-repeat;*/
 		background-image: url("images/top-3200.svg"), url("images/sethu.jpg"), url("../images/header.jpg");
 		background-position: bottom center,					center center,				center center;
-		background-repeat: repeat-x,						no-repeat,					no-repeat;
-		background-size: 3200px 460px,					cover,					cover;
+		background-repeat: no-repeat,						no-repeat,					no-repeat;
+		background-size: cover,					cover,					cover;
 		color: rgba(255, 255, 255, 0.8);
-		padding: 10em 0 20em 0;s
+		padding: 10em 0 20em 0;
 		position: relative;
 		text-align: center;
 	}
