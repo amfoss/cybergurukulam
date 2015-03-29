@@ -36,7 +36,13 @@
 	  ga('send', 'pageview');
 
 	</script>
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="//www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
+        <script type="text/javascript">
+            var CaptchaCallback = function(){
+                grecaptcha.render('RecaptchaField1', {'sitekey' : '6LcfOAQTAAAAAMulh0UTBQczBLN6lLT-FtUz2_TY'});
+                grecaptcha.render('RecaptchaField2', {'sitekey' : '6LcfOAQTAAAAAMulh0UTBQczBLN6lLT-FtUz2_TY'});
+            };
+        </script>
 	</head>
 	<body>
 
@@ -109,6 +115,22 @@
 
 
 				<div class="box container">
+                    <section>
+                        <header>
+                            <h3>FAQ'S</h3>
+                        </header>
+                        1) Can the candidates use - existing codechef account?
+                        <blockquote> Yes, They can use the existing ‘codechef ID’.
+                            But before attemoting the test with the ID, make sure you communicate the ID to the CyberGurukulam Team.
+                            So that the test is enabled for your ID.
+                        </blockquote>
+                        2) Will they represent their schools or are on their own?
+                        <blockquote> The students are on their own at this camp.
+                            There will be no place where you have to use your school name except while registering.
+                        </blockquote>
+                        3) People who are in 7 th standard going to 8 can the apply?
+                        <blockquote> NO </blockquote>
+                    </section>
 					<section>
 						<header id="register">
 							<h3>REGISTER NOW FOR CYBERGURUKULAM</h3>
@@ -189,7 +211,7 @@
 							<div class="row">
 								<div class="12u">
 									<ul class="actions">
-                                        <li><div class="g-recaptcha" data-sitekey="6LcfOAQTAAAAAMulh0UTBQczBLN6lLT-FtUz2_TY"></div></li><br>
+                                        <li><div id="RecaptchaField1" ></div></li><br>
 										<li><input type="submit" value="Send" /></li>
 										<li><input type="reset" value="Reset" class="alt" /></li>
 									</ul>
@@ -206,15 +228,32 @@
 				<div class="container 75%">
 
 					<header class="major last">
-						<h2>You have some questions! email us @</h2>
+						<h2>Question or Comments ?</h2>
 					</header>
-					<div class="row">
-							<div class="12u" >
-							  <p>
-								cybergurukulam@gmail.com
-							  </p>
-							</div>
-						</div>
+                    <form method="post" action="php/mailer.php">
+                        <div class="row">
+                            <div class="6u 12u(mobilep)">
+                                <input type="text" required name="name" placeholder="Name" />
+                            </div>
+                            <div class="6u 12u(mobilep)">
+                                <input type="email" required name="email" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="12u">
+                                <textarea name="message" required placeholder="Message" rows="6"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="12u">
+                                <ul class="actions">
+                                    <li><div id="RecaptchaField2" ></div></li><br>
+                                    <li><input type="submit" value="Send Message" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+
 					<ul class="icons">
 						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="https://www.facebook.com/cybergurukulam" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
