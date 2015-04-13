@@ -8,6 +8,14 @@
 error_reporting(-1);
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+	if ( $_POST['g-recaptcha-response'] == null ) {
+		header('Location: '.'/../php/failure.html');
+	} else {
+		continueRegistration();
+	}
+}
+
+function continueRegistration() {
 	if ( checkIfInValidPost() ) {
 		header('Location: '.'/../php/failure.html');
 		return;
@@ -23,7 +31,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	}
 	mysql_close( $connection );
 	header('Location: '.'/../php/success.html');
-
 }
 
 function establishConnection() {

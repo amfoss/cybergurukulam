@@ -8,8 +8,16 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(-1);
-
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+	$response = null;
+	if ( $_POST['g-recaptcha-response'] == null ) {
+		header('Location: '.'/../php/failure.html');
+	} else {
+		sendEmail();
+	}
+}
+
+function sendEmail() {
 	$toAddress = array(
 		'cybergurukulam@gmail.com',
 		'vipin.p@gmail.com',
