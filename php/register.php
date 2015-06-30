@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS registration(
 	reg_ambition varchar( 400 ) DEFAULT NULL,
 	reg_interest varchar( 400 ) DEFAULT NULL,
 	reg_blog varchar( 200 ) DEFAULT NULL,
-	reg_timestamp varchar( 200 ) DEFAULT NULL
+	reg_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 EOSQL;
 	if ( !mysql_query( $sqlRegistrationTable ) ) {
