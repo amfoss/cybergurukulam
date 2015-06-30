@@ -91,7 +91,7 @@ function insertIntoDatabase() {
 
 	$insertStatemenet = "
 	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
-	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `reg_blog`, `reg_timestamp` )
+	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `reg_blog` )
 	VALUES ( NULL,'$name','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
 	'$phy','$math','$olympiad','$ambition','$interest', '$blog' );";
 
