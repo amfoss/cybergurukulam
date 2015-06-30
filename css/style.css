@@ -741,7 +741,7 @@
 		/*background-position: bottom center,					top left,				center center;*/
 		/*background-repeat: repeat-x,						repeat,					no-repeat;*/
 		background-image: url("images/top-3200.svg"), url("images/sethu.jpg"), url("../images/header.jpg");
-		background-position: bottom center,					center center,				center center;
+		background-position: bottom center,					bottom center,				bottom center;
 		background-repeat: no-repeat,						no-repeat,					no-repeat;
 		background-size: 100%,					cover,					cover;
 		color: rgba(255, 255, 255, 0.8);

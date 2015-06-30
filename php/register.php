@@ -31,6 +31,7 @@ function continueRegistration() {
 	}
 	mysql_close( $connection );
 	header('Location: '.'/../php/success.html');
+		
 }
 
 function establishConnection() {
@@ -61,7 +62,8 @@ CREATE TABLE IF NOT EXISTS registration(
 	reg_olympiad varchar( 400 ) DEFAULT NULL,
 	reg_ambition varchar( 400 ) DEFAULT NULL,
 	reg_interest varchar( 400 ) DEFAULT NULL,
-	reg_blog varchar( 200 ) DEFAULT NULL
+	reg_blog varchar( 200 ) DEFAULT NULL,
+	reg_timestamp varchar( 200 ) DEFAULT NULL
 );
 EOSQL;
 	if ( !mysql_query( $sqlRegistrationTable ) ) {
@@ -87,15 +89,19 @@ function insertIntoDatabase() {
 	$ambition= mysql_real_escape_string( $_POST['ambition'] );
 	$interest= mysql_real_escape_string( $_POST['interest'] );
 	$blog= mysql_real_escape_string( $_POST['blog'] );
+	$timestamp = time();
 
 	$insertStatemenet = "
 	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
 	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `reg_blog`)
 	VALUES ( NULL,'$name','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
-	'$phy','$math','$olympiad','$ambition','$interest', '$blog');";
+	'$phy','$math','$olympiad','$ambition','$interest', '$blog', '$timestamp');";
 
 	if( !mysql_query( $insertStatemenet ) ) {
-		die( mysql_error() );
+		die( mysql_error() );}
+	else { 
+	//Sending confirmation e-mail
+		sendEmail();
 	}
 }
 
@@ -106,4 +112,25 @@ function checkIfInValidPost() {
 		}
 	}
 	return false;
+}
+
+function sendEmail() {
+	$emailid = mysql_real_escape_string( $_POST['email']);
+	$toAddress = 'cybergurukulam@gmail.com';
+	$message = "Hello "+ $_POST['name'] + "\n\t\t Welcome to Cybergurukulam.\n You are successfully registered for the Entrance Test for Cybergurukulam Wintercamp 2015.\n Your e-mail ID will be the primary source communication. Make sure that you check the e-mails regularly."
+	
+	$email_to = implode( ',', $toAddress, $emailid );
+	$subject = 'Welcome to Cybergurukulam ! ';
+	$from = 'cybergurukulam@gmail.com';
+	
+	$name = 'Cybergurukulam';
+	$intro = "Message from $name\n";
+	$message = $intro.wordwrap( $message, 70, "\r\n" );
+	$headers = "From: $from" ."\r\n";
+	if ( mail( $email_to , $subject, $message, $headers ) ) {
+		header('Location: '.'/../php/success.html');
+	} else {
+		header('Location: '.'/../php/failure.html');
+	}
+	
 }

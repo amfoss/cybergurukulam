@@ -1,0 +1,42 @@
+Please find the rough draft for updating the cybergurukulam.in website.
+Reply with your questions and comments.
+Thus the document can be improved shared in google doc. 
+
+MENU
+----------------
+Register
+
+Entrance
+  Important Dates
+  Syllabus
+  Previous Questions
+  
+Camp
+  Location
+  Schedule
+  Subjects
+
+FAQ
+
+Contact Us
+
+
+Admin Page
+----------
+Login as admin.
+
+Reports(Only one report screen with below search screen, no mandatory field.)
+  School
+  Student Name 
+  Student ID
+  Place/District
+  State
+  Class/Standard
+  Phone
+  e-mail
+
+Export Reports into pdf, excel, csv formats.
+
+Edit Records
+  Search and Edit-----
+  Search using abovr criterea(Reports)

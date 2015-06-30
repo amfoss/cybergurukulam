@@ -38,4 +38,5 @@ function sendEmail() {
 	} else {
 		header('Location: '.'/../php/failure.html');
 	}
+	
 }
