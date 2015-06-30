@@ -72,7 +72,6 @@ EOSQL;
 }
 
 function insertIntoDatabase() {
-	print_r( $_POST );
 	$name = mysql_real_escape_string( $_POST['name']);
 	$email = mysql_real_escape_string( $_POST['email']);
 	$phone = mysql_real_escape_string( $_POST['phone']);
@@ -92,15 +91,17 @@ function insertIntoDatabase() {
 
 	$insertStatemenet = "
 	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
-	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `reg_blog`, 'reg_timestamp')
+	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `reg_blog`, `reg_timestamp` )
 	VALUES ( NULL,'$name','$email','$phone','$dob','$city','$school','$address','$paddress','$standard','$cse',
-	'$phy','$math','$olympiad','$ambition','$interest', '$blog', NULL);";
+	'$phy','$math','$olympiad','$ambition','$interest', '$blog' );";
 
 	if( !mysql_query( $insertStatemenet ) ) {
-		die( mysql_error() );}
-	else { 
+		die( mysql_error() );
+		return false;
+	} else {
 	//Sending confirmation e-mail
-		sendEmail();
+		sendEmail( $name, $email );
+		return true;
 	}
 }
 
@@ -113,10 +114,9 @@ function checkIfInValidPost() {
 	return false;
 }
 
-function sendEmail() {
-	$emailid = mysql_real_escape_string( $_POST['email']);
+function sendEmail( $name, $emailId ) {
 	$toAddress = 'cybergurukulam@gmail.com';
-	$message = "Hello "+ $_POST['name'] + "\n\t\t Welcome to Cybergurukulam.\n You are successfully registered for the Entrance Test for Cybergurukulam Wintercamp 2015.\n Your e-mail ID will be the primary source communication. Make sure that you check the e-mails regularly.";
+	$message = "Hello $name \n Welcome to Cybergurukulam.\n You are successfully registered for the Entrance Test for Cybergurukulam Wintercamp 2015.\n Your e-mail ID will be the primary source communication. Make sure that you check the e-mails regularly.";
 	
 	$email_to = implode( ',', $toAddress, $emailid );
 	$subject = 'Welcome to Cybergurukulam ! ';
