@@ -89,7 +89,6 @@ function insertIntoDatabase() {
 	$ambition= mysql_real_escape_string( $_POST['ambition'] );
 	$interest= mysql_real_escape_string( $_POST['interest'] );
 	$blog= mysql_real_escape_string( $_POST['blog'] );
-//	$timestamp = time();
 
 	$insertStatemenet = "
 	INSERT INTO `registration`(`reg_id`, `reg_name`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
@@ -117,7 +116,7 @@ function checkIfInValidPost() {
 function sendEmail() {
 	$emailid = mysql_real_escape_string( $_POST['email']);
 	$toAddress = 'cybergurukulam@gmail.com';
-	$message = "Hello "+ $_POST['name'] + "\n\t\t Welcome to Cybergurukulam.\n You are successfully registered for the Entrance Test for Cybergurukulam Wintercamp 2015.\n Your e-mail ID will be the primary source communication. Make sure that you check the e-mails regularly."
+	$message = "Hello "+ $_POST['name'] + "\n\t\t Welcome to Cybergurukulam.\n You are successfully registered for the Entrance Test for Cybergurukulam Wintercamp 2015.\n Your e-mail ID will be the primary source communication. Make sure that you check the e-mails regularly.";
 	
 	$email_to = implode( ',', $toAddress, $emailid );
 	$subject = 'Welcome to Cybergurukulam ! ';
