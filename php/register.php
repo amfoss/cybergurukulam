@@ -118,7 +118,7 @@ function sendEmail( $name, $emailId ) {
 	$toAddress = 'cybergurukulam@gmail.com';
 	$message = "Hello $name \n Welcome to Cybergurukulam.\n You are successfully registered for the Entrance Test for Cybergurukulam Wintercamp 2015.\n Your e-mail ID will be the primary source communication. Make sure that you check the e-mails regularly.";
 	
-	$email_to = implode( ',', $toAddress, $emailid );
+	$email_to = implode( ',', $toAddress, $emailId );
 	$subject = 'Welcome to Cybergurukulam ! ';
 	$from = 'cybergurukulam@gmail.com';
 	
