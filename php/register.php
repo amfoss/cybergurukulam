@@ -122,14 +122,14 @@ function checkIfInValidPost() {
 
 function sendEmail() {
 	$email_to = mysql_real_escape_string( $_POST['email']);
-	$message = "Hello "+ $_POST['name'] + "\n\t\t Welcome to Cybergurukulam.\n You are successfully registered for the Entrance Test for Cybergurukulam Wintercamp 2015.\n Your e-mail ID will be the primary source communication. Make sure that you check the e-mails regularly.";
+	$message = "Hello ". $_POST['name'] . "\n\t\t Welcome to Cybergurukulam.\n You are successfully registered for the Entrance Test for Cybergurukulam Wintercamp 2015.\n Your e-mail ID will be the primary source communication. Make sure that you check the e-mails regularly.";
 	
 	$subject = 'Welcome to Cybergurukulam ! ';
 	$from = 'cybergurukulam@gmail.com';
 	
 	$name = 'Cybergurukulam';
 	$intro = "Message from $name\n";
-	$message = $intro.wordwrap( $message, 70, "\r\n" );
+	$message = $intro . wordwrap( $message, 70, "\r\n" );
 	$headers = "From: $from" ."\r\n".
 	'Reply-To: '.$email_to."\r\n" .
 	'Bcc: cybergurukulam@gmail.com' . "\r\n" . 
