@@ -98,10 +98,16 @@ function insertIntoDatabase() {
 	'$phy','$math','$olympiad','$ambition','$interest', '$blog', NULL);";
 
 	if( !mysql_query( $insertStatemenet ) ) {
-		die( mysql_error() );}
+		die( mysql_error() );
+		return false;
+		}
 	else { 
 	//Sending confirmation e-mail
-		sendEmail();
+		if(!sendEmail()){
+		  return false;
+		  }
+		  else { return true;}
+		
 	}
 }
 
@@ -130,9 +136,9 @@ function sendEmail() {
 	'X-Mailer: PHP/' . phpversion();
 	
 	if ( mail( $email_to , $subject, $message, $headers ) ) {
-		header('Location: '.'/../php/success.html');
+		return true;
 	} else {
-		header('Location: '.'/../php/failure.html');
+		return false;
 	}
 	
 }
