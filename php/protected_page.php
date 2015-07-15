@@ -5,9 +5,9 @@
  * Date: 15/7/15
  * Time: 8:48 AM
  */
-include_once 'includes/db_connect.php';
+include_once 'access.php';
 include_once 'includes/functions.php';
-
+// include_once 'includes/db_connect.php';
 sec_session_start();
 ?>
 <!DOCTYPE html>
@@ -21,10 +21,8 @@ sec_session_start();
 <?php if (login_check($mysqli) == true) : ?>
     <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
     <p>
-        This is an example protected page.  To access this page, users
-        must be logged in.  At some stage, we'll also check the role of
-        the user, so pages will be able to determine the type of user
-        authorised to access the page.
+        This is a protected page.  To access this page, users
+        must be logged in.  You can access reports here.
     </p>
     <p>Return to <a href="login.html">login page</a></p>
 <?php else : ?>
