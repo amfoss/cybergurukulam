@@ -10,8 +10,8 @@
  */
 
 include_once 'functions.php';
-include '../js/forms.js';
-
+//include '../js/forms.js';
+    
 sec_session_start();
 
 if (login_check($mysqli) == true) {
