@@ -24,10 +24,10 @@ sec_session_start();
         This is a protected page.  To access this page, users
         must be logged in.  You can access reports here.
     </p>
-    <p>Return to <a href="login.html">login page</a></p>
+    <p>Return to <a href="../login.html">login page</a></p>
 <?php else : ?>
     <p>
-        <span class="error">You are not authorized to access this page.</span> Please <a href="login.html">login</a>.
+        <span class="error">You are not authorized to access this page.</span> Please <a href="../login.html">login</a>.
     </p>
 <?php endif; ?>
 </body>

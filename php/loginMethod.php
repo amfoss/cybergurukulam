@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Secure Login: Error</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/init.js"></script>
-    <link rel="stylesheet" href="css/skel.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/style-wide.css" />
-</head>
-<body>
 <?php
 /**
  * Created by PhpStorm.
@@ -25,6 +8,7 @@
 
 include_once 'access.php';
 include_once 'functions.php';
+include_once '../forms.js';
 
 sec_session_start();
 
@@ -38,7 +22,11 @@ if (isset($_GET['error'])) {
     echo '<p class="error">Error Logging In!</p>';
 }
 
-formhash(this.form, this.form.password);
+$password = formhash(this.form, this.form.password);
+if(login(this.form.email, $password, $mysqli))
+{
+    header('Location: '.'/../php/protected_page.php');
+}
 
 if (login_check($mysqli) == true) {
     echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
@@ -49,10 +37,3 @@ if (login_check($mysqli) == true) {
     echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
 }
 ?>
-
-
-
-<h1>There was a problem</h1>
-<p class="error"><?php echo $error; ?></p>
-</body>
-</html>
