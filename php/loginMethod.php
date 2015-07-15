@@ -7,7 +7,7 @@
  */
 
 include_once 'functions.php';
-include_once '../forms.js';
+include_once '../js/forms.js';
 
 sec_session_start();
 
