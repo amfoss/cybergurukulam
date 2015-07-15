@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Login: Error</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-wide.css" />
+</head>
+<body>
 <?php
 /**
  * Created by PhpStorm.
@@ -32,5 +49,10 @@ if (login_check($mysqli) == true) {
     echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
 }
 ?>
+
+
+
+<h1>There was a problem</h1>
+<p class="error"><?php echo $error; ?></p>
 </body>
 </html>
