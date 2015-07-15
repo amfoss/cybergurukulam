@@ -8,7 +8,7 @@
 
 
 //include_once 'psl-config.php';
-include_once 'register.php';
+//include_once 'register.php';
 
 function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
@@ -200,4 +200,13 @@ function esc_url($url) {
     } else {
         return $url;
     }
+}
+
+function connect_db() {
+    include "access.php";
+    $connection = mysql_connect( $host, $user, $pass );
+    if ( !mysql_select_db( $database ) ) {
+        die( mysql_error() );
+    }
+    return $connection;
 }
