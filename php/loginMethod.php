@@ -6,7 +6,7 @@
  * Time: 1:54 PM
  */
 
-include_once 'access.php';
+include_once 'register.php';
 include_once 'functions.php';
 include_once '../forms.js';
 
@@ -21,7 +21,7 @@ if (login_check($mysqli) == true) {
 if (isset($_GET['error'])) {
     echo '<p class="error">Error Logging In!</p>';
 }
-
+$mysqli = establishConnection();
 $password = formhash(this.form, this.form.password);
 if(login(this.form.email, $password, $mysqli))
 {

@@ -8,7 +8,7 @@
 
 
 //include_once 'psl-config.php';
-include_once 'access.php';
+include_once 'register.php';
 
 function sec_session_start() {
     $session_name = 'sec_session_id';   // Set a custom session name
