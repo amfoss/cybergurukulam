@@ -10,7 +10,7 @@
  */
 
 include_once 'functions.php';
-include_once '../js/forms.js';
+include '../js/forms.js';
 
 sec_session_start();
 
@@ -25,6 +25,7 @@ if (isset($_GET['error'])) {
 }
 $mysqli = connect_db();
 $password = formhash(this.form, this.form.password);
+
 if(login(this.form.email, $password, $mysqli))
 {
     header('Location: '.'/../php/protected_page.php');
