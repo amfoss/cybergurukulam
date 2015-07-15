@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <?php
 /**
  * Created by PhpStorm.
@@ -36,3 +39,5 @@ if (login_check($mysqli) == true) {
     echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
 }
 ?>
+
+</html>
