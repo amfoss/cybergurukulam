@@ -66,6 +66,7 @@
  */
 
 include_once 'functions.php';
+include_once 'register.php';
 //include '../js/forms.js';
 
 sec_session_start();
@@ -79,7 +80,7 @@ if (login_check($mysqli) == true) {
 if (isset($_GET['error'])) {
     echo '<p class="error">Error Logging In!</p>';
 }
-$mysqli = connect_db();
+$mysqli = establishConnections();
 $password = formhash(this.form, this.form.password);
 
 if(login(this.form.email, $password, $mysqli))
