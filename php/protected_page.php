@@ -86,7 +86,7 @@ sec_session_start();
         <header id="register">
             <h3>SEARCH NOW</h3>
         </header>
-        <form method="post" action="php/search.php">
+        <form method="post" action="search.php">
             <div class="row">
                 <div class="6u 12u(mobilep)">
                     <label for="name">Name</label>
@@ -121,11 +121,13 @@ sec_session_start();
                     <textarea class="text" type="text" name="paddress" id="paddress" value="" placeholder=""  size="150"></textarea>
                 </div>
 
+                <!-- hidden field to know the search status-->
+                <input type="hidden"  name="doSearch" value="1" />
       <!-- Change the standard into drop down -->
 
                 <div class="6u 12u(mobilep)">
                     <label>Current standard</label>
-                    <select>
+                    <select size="50">
                         <option value="default">...</option>
                         <option value="8">8th</option>
                         <option value="9">9th</option>
@@ -146,8 +148,10 @@ sec_session_start();
                 </div>
             </div>
 
+
         </form>
     </section>
+
 </div>
 
 

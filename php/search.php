@@ -1,62 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<script src="../js/forms.js"></script>
-<head>
-    <title>Admin Login: Log In</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/init.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="css/skel.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/style-wide.css" />
-    </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-    <style>
-        #keyinfo {
-            text-align: center;
-        }
-    </style>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-42366838-3', 'auto');
-        ga('send', 'pageview')
-    </script>
-    <script type="text/javascript">
-        var verifyCallback = function(response) {
-            alert(response);
-        };
-        var widgetId1;
-        var widgetId2;
-        var CaptchaCallback = function(){
-            widgetId1 = grecaptcha.render('RecaptchaField1', {
-                'sitekey' : '6LcfOAQTAAAAAMulh0UTBQczBLN6lLT-FtUz2_TY'
-            });
-            widgetId2 = grecaptcha.render('RecaptchaField2', {
-                'sitekey' : '6LcfOAQTAAAAAMulh0UTBQczBLN6lLT-FtUz2_TY'
-            });
-        };
-    </script>
-    <script src="js/smooth-scroll.js"></script>
-    <script>
-        smoothScroll.init({
-            speed: 1000
-        } );
-    </script>
-    <script type="text/JavaScript" src="js/sha512.js"></script>
-    <script type="text/JavaScript" src="js/forms.js"></script>
-</head>
 <?php
 /**
  * Created by PhpStorm.
@@ -99,3 +40,39 @@ $resultset = searchrec($name,$email,$phone,$dob,$school,$city,$address,$paddress
 
 // Display it in the html page
 ?>
+
+<form>
+    <table width="600" border="1" cellspacing="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>email</th>
+            <th>Date of Birth</th>
+            <th>Phone No</th>
+            <th>School</th>
+            <th>Citi/District</th>
+            <th>Home Address</th>
+            <th>Standard</th>
+        </tr>
+        <?php
+        while($records=mysql_fetch_assoc($resultset)){
+
+            echo "<tr>";
+                echo"<td>".$records['reg_id']."</td>";
+                echo"<td>".$records['reg_name']."</td>";
+                echo"<td>".$records['reg_email']."</td>";
+                echo"<td>".$records['reg_phone']."</td>";
+                echo"<td>".$records['reg_dob']."</td>";
+                echo"<td>".$records['reg_city']."</td>";
+                echo"<td>".$records['reg_school']."</td>";
+                echo"<td>".$records['reg_paddress']."</td>";
+                echo"<td>".$records['reg_standard']."</td>";
+                echo "</tr>";
+
+        }//End while
+
+        ?>
+
+    </table>
+   <li> <input type="button" value="Back"  onclick="protected_page.php"/> </li>
+</form>
