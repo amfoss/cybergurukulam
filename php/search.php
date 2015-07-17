@@ -7,7 +7,7 @@
  */
 
 include_once 'functions.php';
-include_once 'register.php';
+include_once 'access.php';
 //Check whether logged in or not
 sec_session_start();
 
@@ -21,8 +21,11 @@ if (isset($_GET['error'])) {
     echo '<p class="error">Error Logging In!</p>';
 }
 //Connect to the DB
-$mysqli = establishConnections();
-
+$mysqli = connect_db();
+if(!$mysqli){
+    header('Location: '.'error.php');
+    return;
+}
 
 $name = mysql_real_escape_string( $_POST['name']);
 $email = mysql_real_escape_string( $_POST['email']);
@@ -75,4 +78,5 @@ $resultset = searchrec($name,$email,$phone,$dob,$school,$city,$address,$paddress
 
     </table>
    <li> <input type="button" value="Back"  onclick="protected_page.php"/> </li>
+    <?php mysql_close( $mysqli);?>
 </form>

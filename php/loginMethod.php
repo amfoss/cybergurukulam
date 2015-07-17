@@ -82,12 +82,21 @@ if (isset($_GET['error'])) {
     echo '<p class="error">Error Logging In!</p>';
 }
 //$mysqli = establishConnections();
+
+header('Location: '.'/../php/success.html');
+
+
+
 $mysqli = connect_db();
+if(!$mysqli){
+    header('Location: '.'error.php');
+    return;
+}
+
 $password = formhash(this.form, this.form.password);
 
-if(login(this.form.email, $password, $mysqli))
-{
-    header('Location: '.'/../php/protected_page.php');
+if(login(this.form.email, $password, $mysqli)) {
+    header('Location: '.'protected_page.php');
 }
 
 if (login_check($mysqli) == true) {
@@ -98,6 +107,9 @@ if (login_check($mysqli) == true) {
     echo '<p>Currently logged ' . $logged . '.</p>';
     echo "<p>If you don't have a login, please <a href='register.php'>register</a></p>";
 }
+
+mysql_close( $mysqli );
+
 ?>
 
 </html>
