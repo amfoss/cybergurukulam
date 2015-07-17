@@ -210,3 +210,12 @@ function connect_db() {
     }
     return $connection;
 }
+
+function searchrec($name,$email,$phone,$dob,$school,$city,$address,$paddress,$standard){
+    $selectStatement = "
+	SELECT `reg_id`, `reg_name`, `reg_email`, `reg_phone`, `reg_dob`, `reg_city`, `reg_school`, `reg_address`,
+	`reg_paddress`, `reg_standard`, `reg_cse`, `reg_phy`, `reg_math`, `reg_olympiad`, `reg_ambition`, `reg_interest`, `reg_blog` FROM `registration` WHERE
+	 `reg_name` LIKE '%$name%' AND `reg_email` like '%$email%' AND `reg_phone` LIKE '%$phone%' AND `reg_dob` LIKE '$dob' AND `reg_city` LIKE '$city'AND `reg_school` LIKE '$school' AND `reg_address` LIKE '$address' AND `reg_paddress` LIKE '$paddress' AND `reg_standard` LIKE '$standard');";
+
+    return $selectStatement;
+}

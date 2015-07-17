@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <?php
 /**
  * Created by PhpStorm.
@@ -10,8 +12,6 @@ include_once 'includes/functions.php';
 // include_once 'includes/db_connect.php';
 sec_session_start();
 ?>
-<!DOCTYPE html>
-<html>
 <head>
     <title>Reports </title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -81,6 +81,74 @@ sec_session_start();
     </p>
 <?php endif; ?>
 
+<div class="container box">
+    <section>
+        <header id="register">
+            <h3>SEARCH NOW</h3>
+        </header>
+        <form method="post" action="php/search.php">
+            <div class="row">
+                <div class="6u 12u(mobilep)">
+                    <label for="name">Name</label>
+                    <input class="text" type="text" name="name" id="name" value="" placeholder="" />
+                </div>
+                <div class="6u 12u(mobilep)">
+                    <label for="email">Email</label>
+                    <input class="text" type="email" name="email" id="email" value="" placeholder="" />
+                </div>
+                <div class="6u 12u(mobilep)">
+                    <label for="phone">Date of birth</label>
+                    <input class="text" type="date"  name="dob" id="dob" value="" placeholder="" />
+                </div>
+                <div class="6u 12u(mobilep)">
+                    <label for="phone">Phone Number</label>
+                    <input class="text" type="text" name="phone" id="phone" value="" placeholder="" />
+                </div>
+                <div class="6u 12u(mobilep)">
+                    <label for="school">School Name</label>
+                    <input class="text" type="text" name="school" id="school" value="" placeholder="" />
+                </div>
+                <div class="6u 12u(mobilep)">
+                    <label for="city">City/District</label>
+                    <input class="text" type="text" name="city" id="city" value="" placeholder="" />
+                </div>
+                <div class="6u 12u(mobilep)">
+                    <label for="address">School Postal Address</label>
+                    <textarea class="text" type="text" name="address" id="address" value="" placeholder=""  size="150"></textarea>
+                </div>
+                <div class="6u 12u(mobilep)">
+                    <label for="address">Home Postal Address</label>
+                    <textarea class="text" type="text" name="paddress" id="paddress" value="" placeholder=""  size="150"></textarea>
+                </div>
+
+      <!-- Change the standard into drop down -->
+
+                <div class="6u 12u(mobilep)">
+                    <label>Current standard</label>
+                    <select>
+                        <option value="default">...</option>
+                        <option value="8">8th</option>
+                        <option value="9">9th</option>
+                        <option value="10">10th</option>
+                        <option value="11">11th</option>
+                        <option value="12">12th</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="12u">
+                    <ul class="actions">
+                        <li><div id="RecaptchaField1" ></div></li><br>
+                        <li><input type="submit" value="Search" /></li>
+                        <li><input type="reset" value="Reset" class="alt" /></li>
+                    </ul>
+                </div>
+            </div>
+
+        </form>
+    </section>
+</div>
 
 
 </body>
