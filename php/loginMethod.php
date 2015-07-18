@@ -78,7 +78,7 @@ if (login_check($mysqli) == true) {
     $logged = 'out';
 }
 
-if (isset($_GET['error'])) {
+if (isset($_POST['error'])) {
     echo '<p class="error">Error Logging In!</p>';
 }
 //$mysqli = establishConnections();
