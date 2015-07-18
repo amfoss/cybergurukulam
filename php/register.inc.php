@@ -12,7 +12,7 @@
 include_once 'access.php';
 include_once 'functions.php';
 
-$error_msg = "Error !!";
+$error_msg = "";
 
 if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     // Sanitize and validate the data passed in
