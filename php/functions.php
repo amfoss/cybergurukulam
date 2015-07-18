@@ -125,10 +125,7 @@ function checkbrute($user_id, $mysqli) {
 
 function login_check($mysqli) {
     // Check if all session variables are set
-    if (isset($_SESSION['user_id'],
-        $_SESSION['username'],
-        $_SESSION['login_string'])) {
-
+    if (isset($_SESSION['user_id'], $_SESSION['username'], $_SESSION['login_string'])) {
         $user_id = $_SESSION['user_id'];
         $login_string = $_SESSION['login_string'];
         $username = $_SESSION['username'];
@@ -137,8 +134,8 @@ function login_check($mysqli) {
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
 
         if ($stmt = $mysqli->prepare("SELECT password
-                                      FROM members
-                                      WHERE id = ? LIMIT 1")) {
+				      FROM members
+				      WHERE id = ? LIMIT 1")) {
             // Bind "$user_id" to parameter.
             $stmt->bind_param('i', $user_id);
             $stmt->execute();   // Execute the prepared query.
@@ -162,8 +159,9 @@ function login_check($mysqli) {
                 return false;
             }
         } else {
-            // Not logged in
-            return false;
+            // Could not prepare statement
+            header("Location: ../error.php?err=Database error: cannot prepare statement");
+            exit();
         }
     } else {
         // Not logged in

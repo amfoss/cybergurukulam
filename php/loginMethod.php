@@ -83,7 +83,7 @@ if (isset($_GET['error'])) {
 }
 //$mysqli = establishConnections();
 
-header('Location: '.'/../php/success.html');
+//header('Location: '.'/../php/success.html');
 
 
 
