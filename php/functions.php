@@ -205,6 +205,7 @@ function connect_db() {
     $connection = mysql_connect( $host, $user, $pass );
     if ( !mysql_select_db( $database ) ) {
         die( mysql_error() );
+        echo 'Not connected';
     }
     return $connection;
 }

@@ -66,7 +66,7 @@
  */
 
 include_once 'functions.php';
-include_once 'register.php';
+include_once 'access.php';
 
 //include '../js/forms.js';
 
