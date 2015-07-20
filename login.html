@@ -1,84 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html >
+
 <head>
-    <title>Cybergurukulam</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/init.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="css/skel.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/style-wide.css" />
-    </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-    <style>
-        #keyinfo {
-            text-align: center;
-        }
-    </style>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-42366838-3', 'auto');
-        ga('send', 'pageview')
-    </script>
-    <script src="//www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
-    <script type="text/javascript">
-        var verifyCallback = function(response) {
-            alert(response);
-        };
-        var widgetId1;
-        var widgetId2;
-        var CaptchaCallback = function(){
-            widgetId1 = grecaptcha.render('RecaptchaField1', {
-                'sitekey' : '6LcfOAQTAAAAAMulh0UTBQczBLN6lLT-FtUz2_TY'
-            });
-            widgetId2 = grecaptcha.render('RecaptchaField2', {
-                'sitekey' : '6LcfOAQTAAAAAMulh0UTBQczBLN6lLT-FtUz2_TY'
-            });
-        };
-    </script>
-    <script src="js/smooth-scroll.js"></script>
-    <script>
-        smoothScroll.init({
-            speed: 1000
-        } );
-    </script>
+    <meta charset="UTF-8">
+    <title>Secure Login: Registration Form</title>
+    <script type="text/JavaScript" src="js/sha512.js"></script>
+    <script type="text/JavaScript" src="js/forms.js"></script>
 </head>
+
 <body>
 
-<form action="php/loginMethod.php" method="post" name="login">
-    <div id="footer">
-    <section class="6u 12u(mobilep)">
-        <label for="email">Email:</label>
-        <input class="text" type="text" name="email" id="email" value="" placeholder="" />
-</section>
-    <section class="6u 12u(mobilep)">
-        <label for="password">Password:</label>
-        <input class="password" type="password" name="email" id="password" value="" placeholder="" />
-        </section>
+<form action="php/loginMethod.php" method="post" name="login"></form>
+    <br><br><br><br>
 
-        <div class="row">
-            <div class="12u">
-                <ul class="actions">
-                    <!-- <li><br><br>
-                        <div id="RecaptchaField1" class = "6u"></div></li> --> <br>
-                    <li><input type="submit" value="login" onclick="location.href='/php/loginMethod.php';" /></li>
-                    <li><input type="button" value="Register" onclick="location.href='/php/registerAdmin.php';" /></li>
-                </ul>
-            </div>
-        </div>
-
-   </div>
+<table width = '25%'>
+    <tr height = 50 >
+        <td> <label for="email">Email:</label></td>
+        <td><input type="text" name="email" id="email" value="" >  </td>
+    </tr>
+    <tr height = 50>
+            <td><label for="password">Password:</label></td>
+            <td><input type="password" name="email" id="password" value=""> </td>
+        </tr>
+    <tr height = 50>
+        <td>  </td>
+         <td><input type="submit" value="login" onclick="location.href='/php/loginMethod.php';" /> <input type="button" value="Register" onclick="location.href='/php/registerAdmin.php';" /></td>
+    </tr>
+</table>
 
 </form>
 
