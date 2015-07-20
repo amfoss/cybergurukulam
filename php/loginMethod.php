@@ -66,7 +66,7 @@
  */
 
 include_once 'functions.php';
-include_once 'access.php';
+include_once 'register.php';
 
 //include '../js/forms.js';
 
@@ -81,13 +81,13 @@ if (login_check($mysqli) == true) {
 if (isset($_POST['error'])) {
     echo '<p class="error">Error Logging In!</p>';
 }
-//$mysqli = establishConnections();
+$mysqli = establishConnections();
 
-//header('Location: '.'/../php/success.html');
+header('Location: '.'/protected_page.php');
 
 
 
-$mysqli = connect_db();
+//$mysqli = connect_db();
 if(!$mysqli){
     header('Location: '.'error.php');
     return;
@@ -95,9 +95,9 @@ if(!$mysqli){
 
 $password = formhash(this.form, this.form.password);
 
-if(login(this.form.email, $password, $mysqli)) {
-    header('Location: '.'protected_page.php');
-}
+//if(login(this.form.email, $password, $mysqli)) {
+//    header('Location: '.'protected_page.php');
+//}
 
 if (login_check($mysqli) == true) {
     echo '<p>Currently logged ' . $logged . ' as ' . htmlentities($_SESSION['username']) . '.</p>';
