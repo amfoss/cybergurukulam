@@ -1,10 +1,3 @@
-/**
-* Created by PhpStorm.
-* User: rishi
-* Date: 6/7/15
-* Time: 1:54 PM
-*/
-
 <!-- <!DOCTYPE html>
 <html >
 
