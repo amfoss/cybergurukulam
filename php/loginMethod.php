@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 //include_once 'includes/db_connect.php';
-include_once 'includes/functions.php';
-
-sec_session_start();
+include_once 'functions.php';
+include_once 'access.php';
+//sec_session_start();
 
 if (login_check($mysqli) == true) {
     $logged = 'in';
@@ -26,6 +26,7 @@ if (login_check($mysqli) == true) {
     $logged = 'out';
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

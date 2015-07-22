@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L
+AddType application/x-httpd-php .html .htm
+AddType application/x-httpd-php5 .htm .html
+AddType application/x-httpd-php5  php .html
+
+
+
