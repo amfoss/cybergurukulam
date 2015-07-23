@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-//include_once 'includes/db_connect.php';
+//include_once 'includes/db_connect.php'; "#add8e6"
 include_once 'functions.php';
 include_once 'access.php';
 //sec_session_start();
-
+connect_db();
 if (login_check($mysqli) == true) {
     $logged = 'in';
 } else {
@@ -35,32 +35,32 @@ if (login_check($mysqli) == true) {
     <script type="text/JavaScript" src="../js/sha512.js"></script>
     <script type="text/JavaScript" src="../js/forms.js"></script>
 </head>
-<body>
+<body bgcolor="#f0ffff">
 <?php
 if (isset($_POST['error'])) {
     echo '<p class="error">Error Logging In!</p>';
 }
 ?>
-<form action="includes/process_login.php" method="post" name="login_form">
+<form action="process_login.php" method="post" name="login_form" >
     <br><br><br><br>
 
     <table width = '25%'>
-        <tr height = 50 >
-            <td> <label for="email">Email:</label></td>
-            <td><input type="text" name="email" id="email" value="" >  </td>
+        <tr height = 50 bgcolor="#5f9ea0">
+            <td> <label for="email">EMAIL</label></td>
+            <td><input type="text" name="email" id="email" value="" height="30">  </td>
         </tr>
-        <tr height = 50>
-            <td><label for="password">Password:</label></td>
+        <tr height = 50  bgcolor="#8fbc8f">
+            <td><label for="password">PASSWORD</label></td>
             <td><input type="password" name="password" id="password" value=""> </td>
         </tr>
-        <tr height = 50>
+        <tr height = 50 bgcolor="white">
             <td>  </td>
-            <td><input type="button" value="login" onclick="formhash(this.form, this.form.password);" /> <input type="button" value="Register" onclick="location.href='/php/registerAdmin.php';" /></td>
+            <td><input type="submit" value="LOGIN" onfocus="formhash(this.form, this.form.password);" /> <input type="button" value="REGISTER" onclick="location.href='/registerAdmin.php';" /></td>
         </tr>
     </table>
 </form>
+<!--
 <p>If you don't have a login, please <a href="registerAdmin.php">register</a></p>
-<p>If you are done, please <a href="logout.php">log out</a>.</p>
-<p>You are currently logged <?php echo $logged ?>.</p>
+<p>If you are done, please <a href="logout.php">log out</a>.</p> -->
 </body>
 </html>

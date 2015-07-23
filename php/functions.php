@@ -50,6 +50,7 @@ function login($email, $password, $mysqli) {
 
         // hash the password with the unique salt.
         $password = hash('sha512', $password . $salt);
+        echo($password);//**************************************************************************************
         if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts
@@ -202,6 +203,7 @@ function esc_url($url) {
 }
 
 function connect_db() {
+    include "access.php";
     $connection = mysql_connect( $host, $user, $pass );
     if ( !mysql_select_db( $database ) ) {
         die( mysql_error() );
